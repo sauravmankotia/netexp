@@ -1,8 +1,6 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:network_logger/network_logger.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import 'logging_interceptors.dart';
 
@@ -49,9 +47,9 @@ class DioClient {
     } on SocketException catch (e) {
       throw SocketException(e.toString());
     } on FormatException catch (_) {
-      throw FormatException("Unable to process the data");
+      throw const FormatException("Unable to process the data");
     } catch (e) {
-      throw e;
+      rethrow;
     }
   }
 
@@ -76,9 +74,9 @@ class DioClient {
       );
       return response.data;
     } on FormatException catch (_) {
-      throw FormatException("Unable to process the data");
+      throw const FormatException("Unable to process the data");
     } catch (e) {
-      throw e;
+      rethrow;
     }
   }
 }
