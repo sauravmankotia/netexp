@@ -1,9 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:network_logger/network_logger.dart';
-
 import 'api_result.dart';
 import 'dio_client.dart';
-import 'logging_interceptors.dart';
 import 'network_exception.dart';
 
 class APIRepository {
