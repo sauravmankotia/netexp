@@ -2,6 +2,6 @@
 
 A new Flutter project.
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application.
+Use this module to handle network calls and exceptions using dio and freezed package.
